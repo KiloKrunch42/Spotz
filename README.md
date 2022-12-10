@@ -6,5 +6,5 @@ Copy the example.ini file and save it as config.ini. Fill in your mail configura
 
 ## Deployment
 - Configure an autostart of the spotz.py (e.g. per cronjob or rc.local)
-- connect to network
+- Connect to network
 - Position the sensor
