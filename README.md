@@ -1,2 +1,2 @@
-# S.P.O.T.Z
+# S.P.O.T.Z.
 Sumpen Pumpf Observations Technik Zentrum
