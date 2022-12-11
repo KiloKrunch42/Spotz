@@ -6,18 +6,18 @@ from time import sleep
 
 
 def log(text):
-    dir = pathlib.Path(__file__).parent.absolute()
-    logFile = open(str(dir) + "/log.txt", 'a')
+    directory = pathlib.Path(__file__).parent.absolute()
+    log_file = open(str(directory) + "/log.txt", 'a')
     dt = datetime.now()
-    logFile.write(str(dt) + ": " + str(text) + "\n")
-    logFile.close()
+    log_file.write(str(dt) + ": " + str(text) + "\n")
+    log_file.close()
 
 
 if __name__ == '__main__':
     log("Spotz started")
     sensor.setup()
-    dir = pathlib.Path(__file__).parent.absolute()
-    user_config = mailer.read_config(str(dir) + '/config.ini')
+    current_dir = pathlib.Path(__file__).parent.absolute()
+    user_config = mailer.read_config(str(current_dir) + '/config.ini')
     while True:
         if sensor.measure() == 1:
             log("Water sensor triggered")

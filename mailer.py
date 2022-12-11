@@ -13,7 +13,8 @@ def read_config(file):
 
 def create_message(config):
     msg = EmailMessage()
-    msg.set_content('Beep Boop\nAchtung! Der Wasserstand hat den Sensor erreicht!\nStatus Füße: Nass\nBitte Hausratsversicherung prüfen!\nBoop Beep')
+    msg.set_content('Beep Boop\nAchtung! Der Wasserstand hat den Sensor erreicht!\nStatus Füße: Nass'
+                    '\nBitte Hausratsversicherung prüfen!\nBoop Beep')
 
     msg['Subject'] = f'Wasserstandswarnung'
     msg['From'] = config['Mailer']['sender']
@@ -34,7 +35,7 @@ def send_message(msg, config):
 
 if __name__ == '__main__':
     print('Mailer called directly... sending test message')
-    dir = pathlib.Path(__file__).parent.absolute()
-    user_config = read_config(str(dir) + '/config.ini')
+    directory = pathlib.Path(__file__).parent.absolute()
+    user_config = read_config(str(directory) + '/config.ini')
     message = create_message(user_config)
     send_message(message, user_config)
