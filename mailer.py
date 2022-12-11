@@ -13,7 +13,7 @@ def read_config(file):
 
 def create_message(config):
     msg = EmailMessage()
-    msg.set_content('Achtung! Der Wasserstand hat den Sensor erreicht!')
+    msg.set_content('Beep Boop\nAchtung! Der Wasserstand hat den Sensor erreicht!\nStatus Füße: Nass\nBitte Hausratsversicherung prüfen!\nBoop Beep')
 
     msg['Subject'] = f'Wasserstandswarnung'
     msg['From'] = config['Mailer']['sender']
