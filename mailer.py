@@ -1,5 +1,5 @@
 import configparser
-import os
+import pathlib
 import smtplib
 from email.message import EmailMessage
 
@@ -34,6 +34,7 @@ def send_message(msg, config):
 
 if __name__ == '__main__':
     print('Mailer called directly... sending test message')
-    user_config = read_config(os.getcwd() + '/config.ini')
+    dir = pathlib.Path(__file__).parent.absolute()
+    user_config = read_config(str(dir) + '/config.ini')
     message = create_message(user_config)
     send_message(message, user_config)
