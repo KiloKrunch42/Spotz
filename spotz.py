@@ -1,16 +1,8 @@
 import sensor
 import mailer
 import pathlib
-from datetime import datetime
+from logger import log
 from time import sleep
-
-
-def log(text):
-    directory = pathlib.Path(__file__).parent.absolute()
-    log_file = open(str(directory) + "/log.txt", 'a')
-    dt = datetime.now()
-    log_file.write(str(dt) + ": " + str(text) + "\n")
-    log_file.close()
 
 
 if __name__ == '__main__':
